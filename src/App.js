@@ -1,3 +1,6 @@
+// my api key f9178b25
+const API_URL = "http://www.omdbapicom?apikey=f9178b25";
+
 function App() {
   return (
     <div className="App">
