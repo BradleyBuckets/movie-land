@@ -1,24 +1,25 @@
-// my api key f9178b25
-const API_URL = "http://www.omdbapicom?apikey=f9178b25";
+import { useEffect } from "react";
 
-function App() {
+// my api key f9178b25
+const API_URL = "https://www.omdbapi.com?apikey=f9178b25";
+
+const App = () => {
+  const searchMovies = async (title) => {
+    let response = await fetch(`${API_URL}&s=${title}`);
+    let data = await response.json();
+
+    console.log(data);
+  };
+
+  useEffect(() => {
+    searchMovies("Batman");
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Test</h1>
     </div>
   );
-}
+};
 
 export default App;
