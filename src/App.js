@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import MovieCard from "./MovieCard";
 import SearchIcon from "./search.svg";
 
@@ -12,7 +12,6 @@ const App = () => {
   const searchMovies = async (title) => {
     let response = await fetch(`${API_URL}&s=${title}`);
     let data = await response.json();
-
     setMovies(data.Search);
   };
 
