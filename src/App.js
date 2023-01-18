@@ -32,11 +32,17 @@ const App = () => {
           onClick={() => searchMovies(searchTerm)}
         />
       </div>
-      <div className="container">
-        {movies.map((item) => (
-          <MovieCard movie={item} />
-        ))}
-      </div>
+      {movies?.length > 0 ? (
+        <div className="container">
+          {movies.map((item) => (
+            <MovieCard movie={item} />
+          ))}
+        </div>
+      ) : (
+        <div className="empty">
+          <h2>No movies found</h2>
+        </div>
+      )}
     </div>
   );
 };
